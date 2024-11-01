@@ -60,7 +60,7 @@ export default function Home() {
 
             <div className="max-w-3xl text-left">
               <img
-                  src="/profilepic.jpeg"
+                  src="/portfolio/profilepic.jpeg"
                   alt="Profile"
                   className="rounded-full w-24 h-24 mb-4"
               />
@@ -124,15 +124,15 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Work</h3>
                 <ul className="mt-4">
                   <li className="flex items-center mb-4">
-                    <img src="/Walt-Disney-Pictures-Emblem.jpg" alt="Disney Logo" className="w-13 h-10 mr-2" />
+                    <img src="/portfolio/Walt-Disney-Pictures-Emblem.jpg" alt="Disney Logo" className="w-13 h-10 mr-2" />
                     <span className="text-gray-900 dark:text-white">The Walt Disney Company - Software Engineer (2024 - Present)</span>
                   </li>
                   <li className="flex items-center mb-4">
-                    <img src="/santander.jpg" alt="Santander Logo" className="w-15 h-10 mr-2" />
+                    <img src="/portfolio/santander.jpg" alt="Santander Logo" className="w-15 h-10 mr-2" />
                     <span className="text-gray-900 dark:text-white">Santander Bank - Software Engineer (2022 - 2024)</span>
                   </li>
                   <li className="flex items-center mb-4">
-                    <img src="/GDP logo.jpg" alt="GDP Logo" className="w-10 h-10 mr-2" />
+                    <img src="/portfolio/GDP logo.jpg" alt="GDP Logo" className="w-10 h-10 mr-2" />
                     <span className="text-gray-900 dark:text-white">Solutions GDP - Software Engineer (2016  - 2019)</span>
                   </li>
                 </ul>

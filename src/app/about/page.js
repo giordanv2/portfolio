@@ -31,7 +31,7 @@ export default function About() {
 
                     {/* Right side: Profile Image and Links */}
                     <div className="flex flex-col items-center md:items-start">
-                        <img src="/profilepic.jpeg" alt="Profile" className="rounded-lg w-full md:w-auto mb-4" />
+                        <img src="/portfolio/profilepic.jpeg" alt="Profile" className="rounded-lg w-full md:w-auto mb-4" />
                         <div className="mt-4 space-y-2">
                             <a href="https://twitter.com/username" className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-500">
                                 <span>Follow me on X</span>

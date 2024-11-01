@@ -14,21 +14,21 @@ export default function Projects() {
             name: "The Walt Disney Company",
             description: "Creating technology to empower civilians to explore space on their own terms.",
             url: "https://company.com",
-            icon: "/Walt-Disney-Pictures-Emblem.jpg",
+            icon: "/portfolio/Walt-Disney-Pictures-Emblem.jpg",
         },
         {
             id: 2,
             name: "Santander Bank",
             description: "Creating technology to empower civilians to explore space on their own terms.",
             url: "https://company.com",
-            icon: "santander.jpg",
+            icon: "/portfolio/santander.jpg",
         },
         {
             id: 3,
             name: "Solutions GDP",
             description: "Creating technology to empower civilians to explore space on their own terms.",
             url: "https://company.com",
-            icon: "GDP logo.jpg",
+            icon: "/portfolio/GDP logo.jpg",
         },
 
     ];
