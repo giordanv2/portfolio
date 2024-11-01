@@ -1,116 +1,181 @@
-import Image from 'next/image';
+"use client";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p
-          className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div
-          className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <div className="min-h-screen bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto p-6">
+          {/* Header Section */}
+          <header className="py-4 mb-10">
+            <nav className="flex justify-center items-center mb-4 relative">
+              <ul className="flex space-x-4">
+                <li>
+                  <a
+                      href="/"
+                      className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                      href="/about"
+                      className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                      href="/projects"
+                      className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    Projects
+                  </a>
+                </li>
+              </ul>
+
+              {/* Dark Mode Toggle Button */}
+              <button
+                  onClick={toggleDarkMode}
+                  className="absolute right-0 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-3 py-2 rounded-lg"
+              >
+                {darkMode ? '☀️' : '🌖'}
+              </button>
+            </nav>
+
+            <div className="max-w-3xl text-left">
+              <img
+                  src="/profilepic.jpeg"
+                  alt="Profile"
+                  className="rounded-full w-24 h-24 mb-4"
+              />
+              <h1 className="text-5xl font-bold mt-4 text-left text-gray-900 dark:text-white">
+                Android developer, Software engineer, and believer
+              </h1>
+              <p className="mt-4 text-gray-700 dark:text-gray-400">
+                Over 8 years of professional native Android experience. Used Java most of the career. Last 4 years been using mix of Kotlin and Java
+              </p>
+            </div>
+          </header>
+
+          {/* Main Content */}
+          <main className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6">
+            {/* Left side: Articles */}
+            <div>
+              <article className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">February 20, 2023</h2>
+                <p className="text-gray-700 dark:text-gray-400 w-3/4">
+                  Worked for Point of Sale (POS) system for all Disney parks, used across stores, restaurants, hotels, and various other locations. Key features include check creation, integration with receipt printers, credit card terminals, barcode readers, and cash drawers.
+                </p>
+                <a href="#" className="text-blue-500 hover:underline dark:text-blue-400">Read article</a>
+              </article>
+
+              <article className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">April 10, 2023</h2>
+                <p className="text-gray-700 dark:text-gray-400 w-3/4">
+                  Actively participated in the maintenance and enhancement of a large-scale microfinance management application, serving over 80,000 active users.
+                </p>
+                <a href="#" className="text-blue-500 hover:underline dark:text-blue-400">Read article</a>
+              </article>
+
+              <article className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">November 05, 2021</h2>
+                <p className="text-gray-700 dark:text-gray-400 w-3/4">
+                  Core team member in the development and maintenance of a multifaceted automotive app serving thousands of users, featuring car information, wallpapers, and an e-commerce platform for auto parts.
+                </p>
+                <a href="#" className="text-blue-500 hover:underline dark:text-blue-400">Read article</a>
+              </article>
+            </div>
+
+            {/* Right side: Sidebar */}
+            <aside>
+              {/* Stay up-to-date section */}
+              <section className="rounded-lg shadow-md p-4 mb-6 bg-white dark:bg-gray-900">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Stay up to date</h3>
+                <form className="mt-4">
+                  <input
+                      type="email"
+                      className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+                      placeholder="Enter your email"
+                  />
+                  <button className="w-full bg-blue-500 text-white p-2 mt-2 rounded-lg hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-800">
+                    Join
+                  </button>
+                </form>
+              </section>
+
+              {/* Work Section */}
+              <section className="rounded-lg shadow-md p-4 mb-6 bg-white dark:bg-gray-900">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Work</h3>
+                <ul className="mt-4">
+                  <li className="flex items-center mb-4">
+                    <img src="/Walt-Disney-Pictures-Emblem.jpg" alt="Disney Logo" className="w-13 h-10 mr-2" />
+                    <span className="text-gray-900 dark:text-white">The Walt Disney Company - Software Engineer (2024 - Present)</span>
+                  </li>
+                  <li className="flex items-center mb-4">
+                    <img src="/santander.jpg" alt="Santander Logo" className="w-15 h-10 mr-2" />
+                    <span className="text-gray-900 dark:text-white">Santander Bank - Software Engineer (2022 - 2024)</span>
+                  </li>
+                  <li className="flex items-center mb-4">
+                    <img src="/GDP logo.jpg" alt="GDP Logo" className="w-10 h-10 mr-2" />
+                    <span className="text-gray-900 dark:text-white">Solutions GDP - Software Engineer (2016  - 2019)</span>
+                  </li>
+                </ul>
+              </section>
+
+              {/* Skills Section */}
+              <section className="rounded-lg shadow-md p-4 bg-white dark:bg-gray-900">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Skills</h3>
+                <div className="mt-4">
+                  <div className="mb-4">
+                    <span className="text-gray-900 dark:text-white">HTML</span>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-1">
+                      <div className="bg-blue-600 dark:bg-blue-500 h-2.5 rounded-full" style={{ width: '90%' }}></div>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-gray-900 dark:text-white">CSS</span>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-1">
+                      <div className="bg-green-600 dark:bg-green-500 h-2.5 rounded-full" style={{ width: '80%' }}></div>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <span className="text-gray-900 dark:text-white">JavaScript</span>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-1">
+                      <div className="bg-yellow-600 dark:bg-yellow-500 h-2.5 rounded-full" style={{ width: '75%' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </aside>
+          </main>
+
+          {/* Footer Section */}
+          <footer className="border-t mt-10 pt-4 flex justify-between items-center">
+            <nav className="flex space-x-4">
+              <a href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a>
+              <a href="/about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">About</a>
+              <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Projects</a>
+              <a href="/uses" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Uses</a>
+            </nav>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">&copy; 2024 Giordan Vargas. All rights reserved.</p>
+          </footer>
         </div>
       </div>
-
-      <div
-        className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   );
 }
