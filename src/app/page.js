@@ -25,7 +25,7 @@ export default function Home() {
               <ul className="flex space-x-4">
                 <li>
                   <a
-                      href="/"
+                      href="/portfolio"
                       className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                   >
                     Home
@@ -33,7 +33,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                      href="/about"
+                      href="/portfolio/about"
                       className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                   >
                     About
@@ -41,7 +41,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                      href="/projects"
+                      href="/portfolio/projects"
                       className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                   >
                     Projects

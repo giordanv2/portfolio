@@ -23,17 +23,17 @@ export default function Header() {
             <nav className="flex justify-center items-center mb-4 relative">
                 <ul className="flex space-x-4">
                     <li>
-                        <Link href="/portfolio/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link href="/portfolio/about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                             About
                         </Link>
                     </li>
                     <li>
-                        <Link href="/portfolio/projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <Link href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                             Projects
                         </Link>
                     </li>
